@@ -12,12 +12,12 @@ namespace TarefaMvc.Models
        
 
         public int Id { get; set; }
-        public String Acao { get; set; }
+        public string Acao { get; set; }
         public int Quantidade { get; set; }
         public decimal Preco { get; set; }
         public int Tipo { get; set; }
         public DateTime Data_hora { get; set; }
-        public String Observacao { get; set; }
+        public string Observacao { get; set; } 
 
     
         
