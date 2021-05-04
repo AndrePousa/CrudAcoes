@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EJKrVUZgbaVQXy5t+bTRq1fVlHEPvzZA4h5mB/V11FN2IMvSSohIcA0AkXGbxks2fXXXfa0q3viwkHT1NnjviA==",
+  "dgSpecHash": "GjmAr+G4Ep9LxgjUc1NzYfa+FU2AUw+O4WclLnklAxJg75Xycp+yDNVxf4Hth/bq0zmzhuDlgDRTGg8UA2RP/A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Andre\\source\\repos\\TarefaMvc\\TarefaMvc\\TarefaMvc.csproj",
+  "projectFilePath": "C:\\Users\\Andre\\source\\repos\\CrudAcoes\\TarefaMvc\\TarefaMvc.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Andre\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.6\\microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512",
     "C:\\Users\\Andre\\.nuget\\packages\\microsoft.aspnetcore\\2.1.7\\microsoft.aspnetcore.2.1.7.nupkg.sha512",

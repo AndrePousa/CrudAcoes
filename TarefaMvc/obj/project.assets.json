@@ -12659,11 +12659,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Andre\\source\\repos\\TarefaMvc\\TarefaMvc\\TarefaMvc.csproj",
+      "projectUniqueName": "C:\\Users\\Andre\\source\\repos\\CrudAcoes\\TarefaMvc\\TarefaMvc.csproj",
       "projectName": "TarefaMvc",
-      "projectPath": "C:\\Users\\Andre\\source\\repos\\TarefaMvc\\TarefaMvc\\TarefaMvc.csproj",
+      "projectPath": "C:\\Users\\Andre\\source\\repos\\CrudAcoes\\TarefaMvc\\TarefaMvc.csproj",
       "packagesPath": "C:\\Users\\Andre\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Andre\\source\\repos\\TarefaMvc\\TarefaMvc\\obj\\",
+      "outputPath": "C:\\Users\\Andre\\source\\repos\\CrudAcoes\\TarefaMvc\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

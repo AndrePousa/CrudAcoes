@@ -56,18 +56,21 @@ namespace TarefaMvc.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Acao,Quantidade,Preco,Tipo,Data_hora,Observacao")] Acoes acoes)
         {
+             
+                if (ModelState.IsValid)
+                {
 
 
-
-            if (ModelState.IsValid)
-            {
-                _context.Add(acoes);
-                await _context.SaveChangesAsync();
+                    _context.Add(acoes);
+                    await _context.SaveChangesAsync();
 
 
-                return RedirectToAction(nameof(Index));
-            }
-            return View(acoes);
+                    return RedirectToAction(nameof(Index));
+
+                }
+
+                 return View(acoes);
+            
         }
 
         // GET: Acoes/Edit/5
