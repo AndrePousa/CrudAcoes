@@ -63,10 +63,9 @@ namespace TarefaMvc.Controllers
 
                     _context.Add(acoes);
                     await _context.SaveChangesAsync();
-
+                    
 
                     return RedirectToAction(nameof(Index));
-
                 }
 
                  return View(acoes);

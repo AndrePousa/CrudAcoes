@@ -43,6 +43,10 @@
         "netcoreapp2.1": {
           "targetAlias": "netcoreapp2.1",
           "dependencies": {
+            "Microsoft.AspNet.Mvc.pt-br": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
             "Microsoft.AspNetCore": {
               "target": "Package",
               "version": "[2.1.7, )"

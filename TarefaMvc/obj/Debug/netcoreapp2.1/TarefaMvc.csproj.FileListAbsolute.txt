@@ -71,3 +71,4 @@ C:\Users\Andre\source\repos\CrudAcoes\TarefaMvc\obj\Debug\netcoreapp2.1\TarefaMv
 C:\Users\Andre\source\repos\CrudAcoes\TarefaMvc\obj\Debug\netcoreapp2.1\TarefaMvc.pdb
 C:\Users\Andre\source\repos\CrudAcoes\TarefaMvc\obj\Debug\netcoreapp2.1\TarefaMvc.genruntimeconfig.cache
 C:\Users\Andre\source\repos\CrudAcoes\TarefaMvc\obj\Debug\netcoreapp2.1\TarefaMvc.csproj.CopyComplete
+C:\Users\Andre\source\repos\CrudAcoes\TarefaMvc\bin\Debug\netcoreapp2.1\web.config

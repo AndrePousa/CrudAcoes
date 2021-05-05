@@ -66,7 +66,7 @@ using TarefaMvc.Models;
             WriteLiteral("\r\n<h2>Ações Cadastradas</h2>\r\n\r\n<p>\r\n    ");
             EndContext();
             BeginContext(128, 46, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "43a399842ffd4c0280fd2beca374de20", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e6d2ddb9a9104ba1a33577730fe17aad", async() => {
                 BeginContext(151, 19, true);
                 WriteLiteral("Criar novo Cadastro");
                 EndContext();
@@ -216,7 +216,7 @@ using TarefaMvc.Models;
             WriteLiteral("\r\n            </td>\r\n            <td>\r\n                ");
             EndContext();
             BeginContext(1594, 53, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1b4b2489de514f258a706ded5ab16672", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2d25f2ee690444ce86ebae2aeb6bda00", async() => {
                 BeginContext(1639, 4, true);
                 WriteLiteral("Edit");
                 EndContext();
@@ -251,7 +251,7 @@ using TarefaMvc.Models;
             WriteLiteral(" |\r\n                ");
             EndContext();
             BeginContext(1667, 59, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "adfb92f396b542e0b38f89231b5cfa42", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fb951312174e40d3a0890e40d81af18d", async() => {
                 BeginContext(1715, 7, true);
                 WriteLiteral("Details");
                 EndContext();
@@ -286,7 +286,7 @@ using TarefaMvc.Models;
             WriteLiteral(" |\r\n                ");
             EndContext();
             BeginContext(1746, 57, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8d84fb04136f4039b0e0f0cb9ca1dbd8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d70f84112e3641e48bc1bf650c94d7bf", async() => {
                 BeginContext(1793, 6, true);
                 WriteLiteral("Delete");
                 EndContext();
