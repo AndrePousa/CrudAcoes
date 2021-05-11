@@ -20,9 +20,15 @@ namespace TarefaMvc.Controllers
         }
 
         // GET: Acoes
-        public async Task<IActionResult> Index()
-        {
-            return View(await _context.Acoes.ToListAsync());
+        public async Task<IActionResult> Index(string buscar)
+        {   
+            if(buscar == null)
+            {
+                return View(await _context.Acoes.ToListAsync());
+            }
+            //ação para buscar 
+            return View(await _context.Acoes.Where(acao => acao.Acao == buscar).ToListAsync());
+
         }
 
         // GET: Acoes/Details/5
@@ -48,6 +54,8 @@ namespace TarefaMvc.Controllers
         {
             return View();
         }
+    
+
 
         // POST: Acoes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -156,5 +164,9 @@ namespace TarefaMvc.Controllers
         {
             return _context.Acoes.Any(e => e.Id == id);
         }
+    }
+
+    public class Button1_Click
+    {
     }
 }

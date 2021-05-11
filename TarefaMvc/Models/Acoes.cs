@@ -18,8 +18,12 @@ namespace TarefaMvc.Models
         [Display(Name = "Preço")]
         [Required(ErrorMessage = "{0} Obrigatório")]
         public decimal Preco { get; set; }
-       
+
         public int Tipo { get; set; }
+
+        public string TipoLabel {
+            get { return Tipo == 1 ? "Compra" : "Venda"; }         
+        }
         [Display(Name = "Data/Hora")]
         [Required(ErrorMessage = "Data/Hora São obrigatórios")]
         public DateTime Data_hora { get; set; }
