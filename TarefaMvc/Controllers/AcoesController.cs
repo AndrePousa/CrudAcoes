@@ -20,16 +20,29 @@ namespace TarefaMvc.Controllers
         }
 
         // GET: Acoes
-        public async Task<IActionResult> Index(string buscar)
+        public async Task<IActionResult> Index (DateTime? minDate, DateTime? maxDate, string buscar)
         {   
             if(buscar == null)
             {
                 return View(await _context.Acoes.ToListAsync());
             }
-            //ação para buscar 
-            return View(await _context.Acoes.Where(acao => acao.Acao == buscar).ToListAsync());
 
+            var result = from obj in _context.Acoes select obj;
+            if (minDate.HasValue)
+            {
+                result = result.Where(x => x.Data_hora >= minDate.Value);
+            }
+            if (maxDate.HasValue)
+            {
+                result = result.Where(x => x.Data_hora <= maxDate.Value);
+            }
+            //ação para buscar 
+            return View(await _context.Acoes
+                .OrderByDescending(acao => acao.Data_hora)
+                .Where(acao => acao.Acao == buscar).ToListAsync()); 
+               
         }
+    
 
         // GET: Acoes/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -67,8 +80,6 @@ namespace TarefaMvc.Controllers
              
                 if (ModelState.IsValid)
                 {
-
-
                     _context.Add(acoes);
                     await _context.SaveChangesAsync();
                     
@@ -164,9 +175,6 @@ namespace TarefaMvc.Controllers
         {
             return _context.Acoes.Any(e => e.Id == id);
         }
-    }
 
-    public class Button1_Click
-    {
     }
 }

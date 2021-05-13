@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.Threading.Tasks;
 
 namespace TarefaMvc.Models
 {
@@ -28,8 +29,11 @@ namespace TarefaMvc.Models
         [Required(ErrorMessage = "Data/Hora São obrigatórios")]
         public DateTime Data_hora { get; set; }
         [Display(Name = "Observação")]
-        public string Observacao { get; set; } 
+        public string Observacao { get; set; }
 
-                
+        internal static Task FindByDateAsync(DateTime? minDate, DateTime? maxDate)
+        {
+            throw new NotImplementedException();
+        }
     }
 }      
