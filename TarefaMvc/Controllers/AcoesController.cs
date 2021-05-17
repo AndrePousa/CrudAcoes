@@ -20,29 +20,32 @@ namespace TarefaMvc.Controllers
         }
 
         // GET: Acoes
-        public async Task<IActionResult> Index (DateTime? minDate, DateTime? maxDate, string buscar)
-        {   
-            if(buscar == null)
+        public async Task<IActionResult> Index(DateTime? minDate, DateTime? maxDate, string buscar)
+        {
+            var result = from obj in _context.Acoes select obj;
+
+            if (buscar != null && buscar != "")
             {
-                return View(await _context.Acoes.ToListAsync());
+                result = result.Where(x => x.Acao == buscar);
             }
 
-            var result = from obj in _context.Acoes select obj;
             if (minDate.HasValue)
             {
                 result = result.Where(x => x.Data_hora >= minDate.Value);
             }
+
             if (maxDate.HasValue)
             {
                 result = result.Where(x => x.Data_hora <= maxDate.Value);
             }
+
             //ação para buscar 
-            return View(await _context.Acoes
+            return View(
+                await result
                 .OrderByDescending(acao => acao.Data_hora)
-                .Where(acao => acao.Acao == buscar).ToListAsync()); 
-               
+                .ToListAsync()
+            );
         }
-    
 
         // GET: Acoes/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -61,14 +64,11 @@ namespace TarefaMvc.Controllers
 
             return View(acoes);
         }
-
         // GET: Acoes/Create
         public IActionResult Create()
         {
             return View();
         }
-    
-
 
         // POST: Acoes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -77,18 +77,17 @@ namespace TarefaMvc.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Acao,Quantidade,Preco,Tipo,Data_hora,Observacao")] Acoes acoes)
         {
-             
-                if (ModelState.IsValid)
-                {
-                    _context.Add(acoes);
-                    await _context.SaveChangesAsync();
-                    
 
-                    return RedirectToAction(nameof(Index));
-                }
+            if (ModelState.IsValid)
+            {
+                _context.Add(acoes);
+                await _context.SaveChangesAsync();
 
-                 return View(acoes);
-            
+
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(acoes);
         }
 
         // GET: Acoes/Edit/5
@@ -112,7 +111,7 @@ namespace TarefaMvc.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Acao,Quantidade,Preco,Tipo,Data_hora,Observacao")] Acoes acoes)
+        public async Task<IActionResult> Create(int id, [Bind("Id,Acao,Quantidade,Preco,Tipo,Data_hora,Observacao")] Acoes acoes)
         {
             if (id != acoes.Id)
             {
@@ -175,6 +174,5 @@ namespace TarefaMvc.Controllers
         {
             return _context.Acoes.Any(e => e.Id == id);
         }
-
     }
 }
