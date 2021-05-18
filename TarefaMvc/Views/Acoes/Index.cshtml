@@ -4,17 +4,23 @@
     ViewData["Title"] = "Index";
 }
 
+
+
 <h2>Ações Cadastradas</h2>
 
 <p>
     <a asp-action="Create">Criar novo Cadastro</a>
 </p>
-<form asp-controller="Acoes" asp-action="Index" method="get">
-    <input name="buscar" type="text" />
-    <button id="Button1" type="submit">
-        Buscar
-    </button>
-</form>
+<div class="container">
+    <form asp-controller="Acoes" asp-action="Index" method="get">
+        <div>Nome da Ação<input name="buscar" type="text" value="@ViewData["buscar"]" /></div><br/>
+        <div>Data Minima  <input type="Date" name="minDate" value="@ViewData["minDate"]" /></div><br/>
+        <div>Data Máxima  <input type="Date" name="maxDate" value="@ViewData["maxDate"]" /></div><br/>
+        <button id="Button1" type="submit">
+            Buscar
+        </button>
+    </form>
+</div>
 <table class="table">
     <thead>
         <tr>

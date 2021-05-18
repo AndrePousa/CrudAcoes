@@ -13,6 +13,7 @@ namespace TarefaMvc.Controllers
     public class AcoesController : Controller
     {
         private readonly TarefaMvcContext _context;
+        private readonly StringComparison stringComparison;
 
         public AcoesController(TarefaMvcContext context)
         {
@@ -20,31 +21,38 @@ namespace TarefaMvc.Controllers
         }
 
         // GET: Acoes
-        public async Task<IActionResult> Index(DateTime? minDate, DateTime? maxDate, string buscar)
+        public async Task<IActionResult> Index(DateTime? minDate, DateTime? maxDate, string buscar, string stringComparison)
         {
             var result = from obj in _context.Acoes select obj;
-
+           
             if (buscar != null && buscar != "")
             {
-                result = result.Where(x => x.Acao == buscar);
+                // result = result.Where(x => x.Acao == buscar);
+                result = result.Where(x => x.Acao.Contains(buscar));
+
+                ViewData["buscar"] = buscar;
             }
 
             if (minDate.HasValue)
             {
                 result = result.Where(x => x.Data_hora >= minDate.Value);
+
+                ViewData["minDate"] = minDate.Value.ToString("yyyy-MM-dd");
             }
 
             if (maxDate.HasValue)
             {
-                result = result.Where(x => x.Data_hora <= maxDate.Value);
+                result = result.Where(x => x.Data_hora.Date <= maxDate.Value.Date);
+
+                ViewData["maxDate"] = maxDate.Value.ToString("yyyy-MM-dd");
             }
 
             //ação para buscar 
             return View(
-                await result
+                await result             
                 .OrderByDescending(acao => acao.Data_hora)
                 .ToListAsync()
-            );
+            ) ;
         }
 
         // GET: Acoes/Details/5
@@ -64,32 +72,13 @@ namespace TarefaMvc.Controllers
 
             return View(acoes);
         }
+
         // GET: Acoes/Create
         public IActionResult Create()
         {
             return View();
-        }
-
-        // POST: Acoes/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Acao,Quantidade,Preco,Tipo,Data_hora,Observacao")] Acoes acoes)
-        {
-
-            if (ModelState.IsValid)
-            {
-                _context.Add(acoes);
-                await _context.SaveChangesAsync();
-
-
-                return RedirectToAction(nameof(Index));
-            }
-
-            return View(acoes);
-        }
-
+        } 
+       
         // GET: Acoes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {

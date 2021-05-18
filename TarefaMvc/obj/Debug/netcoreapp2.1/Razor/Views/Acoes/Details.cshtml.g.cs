@@ -184,7 +184,7 @@ using TarefaMvc.Models;
             WriteLiteral("\r\n        </dd>\r\n    </dl>\r\n</div>\r\n<div>\r\n    ");
             EndContext();
             BeginContext(1224, 54, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "41e42dea3bac4ca39b3b0bc945d60a99", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3e1a138914e445dabf878c22476c9771", async() => {
                 BeginContext(1270, 4, true);
                 WriteLiteral("Edit");
                 EndContext();
@@ -219,7 +219,7 @@ using TarefaMvc.Models;
             WriteLiteral(" |\r\n    ");
             EndContext();
             BeginContext(1286, 38, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f799567fa18d4cbfac78538461545c75", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "305b3add45604d96a5f56129f12219cb", async() => {
                 BeginContext(1308, 12, true);
                 WriteLiteral("Back to List");
                 EndContext();

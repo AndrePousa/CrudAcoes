@@ -2512,7 +2512,7 @@ label {
 input[type="search"] {
   box-sizing: border-box;
   -webkit-appearance: none;
-  appearance: none;
+   /*appearance: none;*/
 }
 input[type="radio"],
 input[type="checkbox"] {
@@ -5775,7 +5775,7 @@ button.close {
   background: transparent;
   border: 0;
   -webkit-appearance: none;
-  appearance: none;
+  /*appearance: none;*/
 }
 .modal-open {
   overflow: hidden;
